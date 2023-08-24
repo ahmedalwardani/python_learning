@@ -23,8 +23,10 @@ for number in range(1, nr_numbers + 1):
   
 print(f"Here is your password: {password}")
 
-#Hard Level - Order of characters randomised:
-#e.g. 4 letter, 2 symbol, 2 number = g^2jk8&P
+
+# Hard Level - Order of characters randomised:
+# e.g. 4 letter, 2 symbol, 2 number = g^2jk8&P
+
 
 password_list = list(password)
 random.shuffle(password_list)
