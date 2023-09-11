@@ -1,8 +1,12 @@
+from pprint import pprint
 import requests
+
 SHEETY_PRICES_ENDPOINT = "https://api.sheety.co/b1c1d0ca8e7b71e38309f35a388b1758/flightDeals/prices"
+SHEETY_USERS_ENDPOINT = "https://api.sheety.co/b1c1d0ca8e7b71e38309f35a388b1758/flightDeals/users"
 
 
 class DataManager:
+
     def __init__(self):
         self.destination_data = {}
 
@@ -14,10 +18,20 @@ class DataManager:
 
     def update_destination_codes(self):
         for city in self.destination_data:
-            payload = {
+            new_data = {
                 "price": {
                     "iataCode": city["iataCode"]
                 }
             }
-            response = requests.put(url=f'{SHEETY_PRICES_ENDPOINT}/{city["id"]}', json=payload)
+            response = requests.put(
+                url=f"{SHEETY_PRICES_ENDPOINT}/{city['id']}",
+                json=new_data
+            )
             print(response.text)
+
+    def get_customer_emails(self):
+        customers_endpoint = SHEETY_USERS_ENDPOINT
+        response = requests.get(url=customers_endpoint)
+        data = response.json()
+        self.customer_data = data["users"]
+        return self.customer_data
