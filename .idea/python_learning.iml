@@ -5,6 +5,7 @@
       <excludeFolder url="file://$MODULE_DIR$/day-38/workout_tracker/venv" />
       <excludeFolder url="file://$MODULE_DIR$/day-47/price-tracker/venv" />
       <excludeFolder url="file://$MODULE_DIR$/day-48/venv" />
+      <excludeFolder url="file://$MODULE_DIR$/day-54-55/higher-or-lower/venv" />
     </content>
     <orderEntry type="inheritedJdk" />
     <orderEntry type="sourceFolder" forTests="false" />
